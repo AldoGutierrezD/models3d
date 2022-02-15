@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="src/styles.css">
+    <link  rel="icon" href="src/img/icono.png" type="image/png" />
+    <title>Model Viewer 3D</title>
+</head>
+<body>
+    <header>
+        <h1>Model Viewer</h1>
+    </header>
+    <section class="container-main">
+        <model-viewer 
+            id="starbucks" 
+            loading="eager"
+            poster="src/img/starbucks.jpg" 
+            src="src/models/Vaso.glb" alt="Vaso Modelo 3D">
+        </model-viewer>
+        <model-viewer 
+            id="planta" 
+            loading="eager" 
+            skybox-image="src/img/green_point.hdr" 
+            camera-controls 
+            poster="src/starbucks.jpg" 
+            src="src/models/Planta.glb" alt="Maceta con planta modelo 3D">
+        </model-viewer>
+        <model-viewer 
+            id="subway" 
+            loading="eager" 
+            camera-controls 
+            auto-rotate 
+            poster="src/starbucks.jpg" 
+            src="src/models/Entrada.glb" alt="Subway Modelo 3D">
+            <button slot="hotspot-subway" data-position="-0.54 0.93 0.1" data-normal="-0.73 0.05 0.69">
+                <div id="annotation">Entrada al metro</div>
+            </button>
+        </model-viewer>
+    </section>
+    <footer>
+        <h4>Todos los modelos fueron hechos por Aldo Gutiérrez</h4>
+    </footer>
+
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <script src="src/app.js"></script>
+</body>
+</html>
